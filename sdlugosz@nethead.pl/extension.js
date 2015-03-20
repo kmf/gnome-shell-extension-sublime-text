@@ -11,14 +11,14 @@ SublimeStatusIcon.prototype = {
     __proto__: PanelMenu.SystemStatusButton.prototype,
 
     _init: function() {
-        PanelMenu.SystemStatusButton.prototype._init.call(this, 'sublime-text-2'); 
+        PanelMenu.SystemStatusButton.prototype._init.call(this, 'sublime-text-3'); 
 
         this._buildMenu();
 
     },
 
     _buildMenu: function() {
-        this._addCommand('Open Sublime Text 2',"sublime-text", this.menu); 
+        this._addCommand('Open Sublime Text 3',"sublime-text", this.menu); 
         this.menu.addMenuItem(new PopupMenu.PopupSeparatorMenuItem());
         this._parseSublimeConfig();   
     },
@@ -35,7 +35,7 @@ SublimeStatusIcon.prototype = {
 
 
     _parseSublimeConfig: function() {
-    let _configFile = GLib.get_user_config_dir() + "/sublime-text-2/Settings/Session.sublime_session";
+    let _configFile = GLib.get_user_config_dir() + "/sublime-text-3/Settings/Session.sublime_session";
 	
 	if (GLib.file_test(_configFile, GLib.FileTest.EXISTS)) {
             let filedata = null;
@@ -65,7 +65,7 @@ SublimeStatusIcon.prototype = {
             catch (e) {
                 global.logError(_("Error reading config = ") + e);
             }
-        } else this._addCommand('Open Sublime Text 2',"sublime-text", this.menu);   
+        } else this._addCommand('Open Sublime Text 3',"sublime-text", this.menu);   
 
     },
 
