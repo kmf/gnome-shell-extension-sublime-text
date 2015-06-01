@@ -35,7 +35,7 @@ SublimeStatusIcon.prototype = {
 
 
     _parseSublimeConfig: function() {
-    let _configFile = GLib.get_user_config_dir() + "/sublime-text-3/Settings/Session.sublime_session";
+    let _configFile = GLib.get_user_config_dir() + "/sublime-text-3/Local/Session.sublime_session";
 	
 	if (GLib.file_test(_configFile, GLib.FileTest.EXISTS)) {
             let filedata = null;
